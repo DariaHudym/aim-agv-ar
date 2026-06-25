@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIM AGV – AR Preview</title>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d1117;
+      color: #f0f0f0;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      width: 100%;
+      padding: 18px 24px;
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #e6edf3;
+    }
+    header p {
+      font-size: 0.78rem;
+      color: #8b949e;
+      margin-top: 4px;
+    }
+    model-viewer {
+      width: 100%;
+      max-width: 600px;
+      height: 70vw;
+      max-height: 480px;
+      background: #161b22;
+      --progress-bar-color: #2f81f7;
+    }
+    .ar-btn {
+      background: #2f81f7;
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin: 18px 0 6px;
+      letter-spacing: 0.02em;
+    }
+    .ar-btn:hover { background: #1f6feb; }
+    footer {
+      margin-top: auto;
+      padding: 18px;
+      font-size: 0.72rem;
+      color: #484f58;
+      text-align: center;
+    }
+    .hint {
+      font-size: 0.8rem;
+      color: #8b949e;
+      text-align: center;
+      padding: 0 24px 12px;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>America In Motion — AGV Preview</h1>
+    <p>Rotate · Zoom · Place in your facility with AR</p>
+  </header>
+
+
+<model-viewer
+    src="216_AGV.glb"
+    ios-src="216_AGV.usdz"
+    alt="AIM AGV"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1"
+    exposure="1"
+    style="background:#161b22;">
+
+    <!-- AR button shown on mobile -->
+    <button slot="ar-button" class="ar-btn">
+      📷 View in Your Space (AR)
+    </button>
+
+  </model-viewer>
+
+  <p class="hint">
+    On your phone, tap "View in Your Space" to place the AGV in your facility using your camera.
+  </p>
+
+  <footer>America In Motion · Conceptual Preview Only · Not to scale</footer>
+
+</body>
+</html>
